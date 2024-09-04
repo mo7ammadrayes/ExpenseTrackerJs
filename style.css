@@ -1,0 +1,393 @@
+/* General Styles */
+body {
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("3386851.jpg");
+    background-position: center;
+        background-size: cover; /* Cover the entire screen */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keep the image fixed when scrolling */
+
+    margin: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    background-color: rgba(240, 237, 237, 0.5); /* Adding a dark overlay */
+    min-height: 100vh;
+}
+
+header {
+    font-size: 4em;
+    font-family: 'Times New Roman', Times, serif;
+    color: hsl(56, 100%, 50%);
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 4px solid hsl(0, 100%, 50%); /* Underline */
+}
+
+/* Input Section */
+div#inputs {
+    padding: 20px;
+    background-image: linear-gradient(135deg, rgba(127, 52, 247, 0.9), rgba(243, 235, 8, 0.8));
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+div#inputs label,p {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: rgb(242, 238, 238);
+    font-size: 1.3em;
+}
+
+div#inputs input[type="number"],
+div#inputs input[type="text"],
+div#inputs input[type="date"],
+div#inputs select {
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+div#inputs input[type="radio"] {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#editTypes {
+    width: 96%;
+    padding: 10px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+#editTypes:hover {
+    background-color: #db0e07;
+}
+#add {
+    width: 96%;
+    padding: 10px;
+    background-color: #0048ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#add:hover {
+    background-color: #0e60db;
+}
+
+/* Switcher Section */
+div#switcher {
+    text-align: center;
+    margin-top: 20px;
+}
+
+div#switcher button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #22ae16;
+    color: white;
+    cursor: pointer;
+}
+
+div#switcher button:hover {
+    background-color: #30b300;
+}
+
+/* Content Section */
+div#content {
+    padding: 20px;
+    background-color: #f0dede;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#list-container{
+    overflow: scroll;
+
+}
+label#balance, label#incomes, label#outcomes {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+div#list-container ul#list {
+    list-style-type: none;
+    padding: 0;
+}
+
+div#list-container ul#list li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+div#list-container ul#list li button {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+div#list-container ul#list li button:hover {
+    background-color: #d32f2f;
+}
+
+div#buttonsDate button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+div#buttonsDate button:hover {
+    background-color: #0056b3;
+}
+
+div#chart-container {
+    margin-top: 20px;
+}
+/* Styling for the recurring radio buttons in one line */
+#recurringOptions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#recurringOptions label {
+    margin-right: 20px;
+}
+
+/* Align radio buttons and labels in one line */
+.recurrence-period {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="radio"] {
+    margin: 0;
+}
+
+
+.recurrence-period label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+#categoryModal {
+    position: fixed;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    overflow: scroll;
+    background-color: beige;
+    max-height: 300px;
+}
+
+#categoryModal h3 {
+    margin-bottom: 20px;
+}
+
+#categoryModal button{
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #22ae16;
+    color: white;
+    cursor: pointer;
+}
+#categoryModal button:hover{
+    background-color: #24d914;
+}
+#categoryList {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#categoryList li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#categoryList li button {
+    margin-left: 10px;
+    background-color: rgb(255, 68, 0);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#categoryList li button:hover {
+    background-color: darkred;
+}
+
+#newCategory {
+    width: 30%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#search{   margin: 10px;
+    padding: 10px 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffd11a;
+    color: rgb(10, 10, 10);
+    font-family: cursive;
+    cursor: pointer;}
+    #search:hover{
+        background-color: #e9bd0c;
+
+    }
+
+#nameInput{
+    width: 70%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+
+}
+/* Scrollable list container */
+#list-container {
+    max-height: 300px; /* Set a fixed height for the container */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+/* Recurring Tasks Container */
+#recurringTasksContainer {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color:none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+
+/* Heading for the section */
+#recurringTasksContainer h3 {
+    font-size: 1.8em;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* List of recurring tasks */
+#recurringList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;  /* Limit height and allow scroll */
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+/* Styling each task item in the list */
+#recurringList li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Button for managing individual tasks */
+#recurringList li button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#recurringList li button:hover {
+    background-color: #d32f2f;
+}
+
+/* Style for the button container inside each list item */
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-left: auto; /* Push the buttons to the right side */
+}
+
+/* Style for the buttons */
+.button-container button {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+}

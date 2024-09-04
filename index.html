@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <header> the moneyKeeper</header>
+    <div id="inputs">
+        <label for="amount">Enter the amount:</label>
+        <input type="number" id="amount">
+        
+        <label for="name">Enter the name:</label>
+        <input type="text" id="name">
+        
+        <label for="date">Enter the date:</label>
+        <input type="date" id="date">
+        <label>Do you want it to be recurring?</label>
+        <div id="recurringOptions">
+            <input type="radio" id="recurringYes" name="recurring" value="yes">
+            <label for="recurringYes">Yes</label>
+        
+            <input type="radio" id="recurringNo" name="recurring" value="no" checked>
+            <label for="recurringNo">No</label>
+        </div>
+        <div id="recurrenceOptions" style="display: none;">
+            <p>How often should it recur?</p>
+            <div class="recurrence-period">
+                <div class="radio-option">
+                    <input id="daily" type="radio" name="period" value="daily">
+                    <label for="daily">1 day</label>
+                </div>
+        
+                <div class="radio-option">
+                    <input id="weekly" type="radio" name="period" value="weekly">
+                    <label for="weekly">7 days</label>
+                </div>
+        
+                <div class="radio-option">
+                    <input id="monthly" name="period" type="radio" value="monthly">
+                    <label for="monthly">30 days</label>
+                </div>
+        
+                <div class="radio-option">
+                    <input id="yearly" name="period" type="radio" value="yearly">
+                    <label for="yearly">365 days</label>
+                </div>
+        
+                <div class="radio-option">
+                    <input type="radio" name="period" id="customPeriod">
+                    <label for="customPeriod">Custom period (in days):</label><br>
+                    <input type="number" name="period" id="customPeriodValue" placeholder="Enter the days" style="display: none;">
+                </div>
+            </div>
+        </div>
+                
+        <p id="type">Choose the category:</p>
+        <select id="types" name="types" required>
+            <option value="">Please select</option>
+            <option value="income">Income</option>
+            <option value="housing">Housing</option>
+            <option value="transportation">Transportation</option>
+            <option value="food_dining">Food & Dining</option>
+            <option value="health_fitness">Health & Fitness</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="personal_care">Personal Care</option>
+            <option value="shopping">Shopping</option>
+            <option value="travel">Travel</option>
+            <option value="education">Education</option>
+            <option value="insurance">Insurance</option>
+            <option value="savings_investments">Savings & Investments</option>
+            <option value="miscellaneous">Miscellaneous</option>
+        </select>
+        <button id="editTypes"> edit the categories</button>
+        <button id="add">Add</button>
+        <div id="recurringTasksContainer">
+            <h3>Manage Recurring Transactions</h3>
+            <ul id="recurringList"></ul>
+        </div>
+        
+        
+        <div id="categoryModal" style="display: none;">
+            <h3>Edit Categories</h3>
+            <ul id="categoryList"></ul>
+            <input type="text" id="newCategory" placeholder="Add new category" />
+            <button id="addCategory">Add</button>
+            <button id="closeModal">Close</button>
+        </div>
+        
+    </div>
+    
+
+    <div id="switcher">
+        <button id="showList">Show List</button>
+        <button id="showChart">Show Chart</button>
+    </div>
+
+    <div id="content">
+ <label for="" id="balance"></label>
+ <label for="" id="incomes"></label>
+ <label for="" id="outcomes"></label>
+ <input id="nameInput" type="text" placeholder="enter the item name" >
+ <button id="search"> search</button>
+
+ <div id="list-container">
+    <ul id="list">
+    </ul>       
+ </div>
+        <div id="chart-container" style="display: none;">
+            <canvas id="transactionsChart" width="400" height="200"></canvas>
+        </div>
+        <div id="buttonsDate">
+            <button id="nowMonth"> show last 30 days</button>
+            <button id="last3"> show last 60 days</button>
+            <button id="last6"> show last 180 days</button>
+            <button id="all"> show all</button>
+    
+    
+        </div>
+    </div>
+  
+
+    <script src="index.js"></script>
+</body>
+</html>
